@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa interactivo</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" href="imagenes/drake.ico" type="image/x-icon">
+    <script type="text/javascript">
+
+        // Función para cambiar la imagen del mapa
+        function cambiarMapa(zona) {
+            document.getElementById('mapa').src = `imagenes/zona-${zona}.png`;
+        }
+    
+        // Función para volver al mapa original
+        function volverMapa() {
+            document.getElementById('mapa').src = 'imagenes/mapa.png';
+        }
+    
+        // Función para mostrar/ocultar zonas
+        function toggleZona(zonaId, indiceId, nombreZona) {
+            var zona = document.getElementById(zonaId);
+            var indice = document.getElementById(indiceId);
+    
+            zona.style.display = (zona.style.display == 'none' || zona.style.display == '') ? 'block' : 'none';
+            indice.style.display = (indice.style.display == 'none' || indice.style.display == '') ? 'block' : 'none';
+    
+            // Asignar nombre de zona al input
+            document.getElementById('cajaZona').value = nombreZona;
+            // Limpiar contenedor de valoración
+            document.getElementById('contenedorValoracion').innerHTML = '';
+        }
+    
+        // Función para valorar zona
+        function valorar() {
+            var contenidoZona = document.getElementById('cajaZona').value;
+            var contenidoValoracion = document.getElementById('cajaValoracion').value;
+            document.getElementById('contenedorValoracion').innerHTML = `<strong>${contenidoZona} </strong><em>${contenidoValoracion}</em>`;
+        }
+    
+    </script>
+</head>
+<body>
+    <div id="titulo" class="containerTitulo"><h1>Mapa interactivo de Thalrondor</h1></div><br>
+
+    <!-- Botones para cambiar de mapa -->
+    <button onclick="cambiarMapa(1)">Cambiar a Zona 1 - Ered Mithril</button>
+    <button onclick="cambiarMapa(2)">Cambiar a Zona 2 - Elrondil</button>
+    <button onclick="cambiarMapa(3)">Cambiar a Zona 3 - Eldoria</button>
+    <button onclick="cambiarMapa(4)">Cambiar a Zona 4 - Thalrassath</button>
+    <button onclick="cambiarMapa(5)">Cambiar a Zona 5 - Leviatán de Bruma</button>
+    
+    <br><br>
+    
+    <!-- Botones para mostrar/ocultar cada zona -->
+    <button onclick="toggleZona('zona-1', 'indiceZona1', 'Ered Mithril')">Mostrar/Ocultar Zona 1 - Ered Mithril</button>
+    <button onclick="toggleZona('zona-2', 'indiceZona2', 'Elrondil')">Mostrar/Ocultar Zona 2 - Elrondil</button>
+    <button onclick="toggleZona('zona-3', 'indiceZona3', 'Eldoria')">Mostrar/Ocultar Zona 3 - Eldoria</button>
+    <button onclick="toggleZona('zona-4', 'indiceZona4', 'Thalrassath')">Mostrar/Ocultar Zona 4 - Thalrassath</button>
+    <button onclick="toggleZona('zona-5', 'indiceZona5', 'Leviatán de Bruma')">Mostrar/Ocultar Zona 5 - Leviatán de Bruma</button>
+    
+    <!-- Contenedor dinámico de zonas -->
+    <div id="contenedorZonas"></div>
+    
+    <script type="text/javascript">
+        // Array de zonas con sus respectivas descripciones y enlaces
+        const zonas = [
+            {
+                id: 1,
+                nombre: 'Ered Mithril',
+                descripcion: 'Descripción',
+                datos: 'Lista de minerales',
+                imagen: 'Imagen del lugar'
+            },
+            {
+                id: 2,
+                nombre: 'Elrondil',
+                descripcion: 'Descripción',
+                datos: 'Tipos de maderas élficas',
+                imagen: 'Imagen del lugar'
+            },
+            {
+                id: 3,
+                nombre: 'Eldoria',
+                descripcion: 'Descripción',
+                datos: 'Lista de artículos de Eldoria',
+                imagen: 'Imagen del lugar'
+            },
+            {
+                id: 4,
+                nombre: 'Thalrassath',
+                descripcion: 'Descripción',
+                datos: 'Lista de dragones',
+                imagen: 'Imagen del lugar'
+            },
+            {
+                id: 5,
+                nombre: 'Leviatán de Bruma',
+                descripcion: 'Descripción',
+                datos: 'Viajes del Leviatán de Bruma',
+                imagen: 'Imagen del lugar'
+            }
+        ];
+    
+        // Generar el HTML dinámicamente
+        const contenedorZonas = document.getElementById('contenedorZonas');
+        zonas.forEach(zona => {
+            const zonaHtml = `
+                <div id="indiceZona${zona.id}" class="containerIndice" style="display: none;">
+                    <a href="#descripcion-${zona.id}">${zona.descripcion}</a>
+                    <a href="#datos${zona.id}">${zona.datos}</a>
+                    <a href="#imagen${zona.id}">${zona.imagen}</a>
+                </div>
+            `;
+            contenedorZonas.innerHTML += zonaHtml;
+        });
+    
+        // Función para cambiar la imagen del mapa
+        function cambiarMapa(zona) {
+            document.getElementById('mapa').src = `imagenes/zona-${zona}.png`;
+        }
+    
+        // Función para volver al mapa original (si lo necesitas)
+        function volverMapa() {
+            document.getElementById('mapa').src = 'imagenes/mapa.png';
+        }
+    
+        // Función para mostrar/ocultar zonas
+        function toggleZona(zonaId, indiceId, nombreZona) {
+            var zona = document.getElementById(zonaId);
+            var indice = document.getElementById(indiceId);
+    
+            zona.style.display = (zona.style.display == 'none' || zona.style.display == '') ? 'block' : 'none';
+            indice.style.display = (indice.style.display == 'none' || indice.style.display == '') ? 'block' : 'none';
+    
+            // Asignar nombre de zona al input
+            document.getElementById('cajaZona').value = nombreZona;
+            // Limpiar contenedor de valoración
+            document.getElementById('contenedorValoracion').innerHTML = '';
+        }
+    
+    </script>
+    
+
+</body> 
+</html>   

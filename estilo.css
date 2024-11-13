@@ -1,0 +1,85 @@
+body{
+    font-family: arial;
+    background-image: url(imagenes/fondo.jpeg);
+}
+
+.containerTitulo{
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 8px;
+    background-color: beige;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.mapatotal{
+    display: flex;
+    justify-content: center;
+    background-color: beige;
+    margin-left: 12%;
+    margin-right: 12%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.containerIndice{
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 8px;
+    background-color: beige;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 1%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.containerIndice a{
+    margin-left: 8px;
+    margin-right: 8px;
+} 
+
+a{
+    color: black;
+}
+
+a:hover{
+    color: aquamarine;
+}
+
+.containerFormulario{
+    text-align: center;
+    border: 1px solid;
+    border-radius: 8px;
+    background-color: beige;
+    margin-left: 41%;
+    margin-right: 41%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.containerZona{
+    text-align: center;
+    border: 1px solid;
+    border-radius: 8px;
+    background-color: beige;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-top: 1%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+li {
+    text-align: justify;
+}
+
+dl{
+    text-align: justify;
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa interactivo</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" href="imagenes/drake.ico" type="image/x-icon">
+    <script type="text/javascript">
+
+        function cambioMapa1(){
+            document.getElementById('mapa').src='imagenes/zona-1.png';
+        }
+
+        function vuelveMapa1(){
+            document.getElementById('mapa').src='imagenes/mapa.png';
+        }
+        
+        function cambioMapa2(){
+            document.getElementById('mapa').src='imagenes/zona-2.png';
+        }
+
+        function vuelveMapa2(){
+            document.getElementById('mapa').src='imagenes/mapa.png';
+        }
+
+        function cambioMapa3(){
+            document.getElementById('mapa').src='imagenes/zona-3.png';
+        }
+
+        function vuelveMapa3(){
+            document.getElementById('mapa').src='imagenes/mapa.png';
+        }
+
+        function cambioMapa4(){
+            document.getElementById('mapa').src='imagenes/zona-4.png';
+        }
+
+        function vuelveMapa4(){
+            document.getElementById('mapa').src='imagenes/mapa.png';
+        }
+
+        function cambioMapa5(){
+            document.getElementById('mapa').src='imagenes/zona-5.png';
+        }
+
+        function vuelveMapa5(){
+            document.getElementById('mapa').src='imagenes/mapa.png';
+        }
+
+        //Declaramos las funciones de cada zona, una variable para esa zona y hacemos que esa variable, que va unida a cada zona, comience oculta siempre
+        //por lo que en la condicional establecemos siempre que si la zona esta oculta, al hacer click se muestre y cuando se vuelva hacer click se oculte otra vez.
+        function zona1(){
+            var nombrezona_1='Ered Mithril';
+            var zona_1= document.getElementById('zona-1');
+            if (zona_1.style.display =='none'){
+                zona_1.style.display='block';
+            } else {
+                zona_1.style.display='none';
+            }
+            var indicezona_1= document.getElementById('indiceZona1');
+            if (indicezona_1.style.display =='none'){
+                indicezona_1.style.display='block';
+            } else {
+                indicezona_1.style.display='none';
+            }
+            document.getElementById('cajaZona').value= nombrezona_1;
+            document.getElementById('contenedorValoracion').innerHTML='';
+        }
+
+        function zona2(){
+            var nombrezona_2='Elrondil';
+            var zona_2= document.getElementById('zona-2');
+            if (zona_2.style.display =='none'){
+                zona_2.style.display='block';
+            } else {
+                zona_2.style.display='none';
+            }
+            var indicezona_2= document.getElementById('indiceZona2');
+            if (indicezona_2.style.display =='none'){
+                indicezona_2.style.display='block';
+            } else {
+                indicezona_2.style.display='none';
+            }
+            document.getElementById('cajaZona').value= nombrezona_2;
+            document.getElementById('contenedorValoracion').innerHTML='';
+        }
+
+         function zona3(){
+            var nombrezona_3='Eldoria';
+            var zona_3= document.getElementById('zona-3');
+            if (zona_3.style.display =='none'){
+                zona_3.style.display='block';
+            } else {
+                zona_3.style.display='none';
+            }
+            var indicezona_3= document.getElementById('indiceZona3');
+            if (indicezona_3.style.display =='none'){
+                indicezona_3.style.display='block';
+            } else {
+                indicezona_3.style.display='none';
+            }
+            document.getElementById('cajaZona').value= nombrezona_3;
+            document.getElementById('contenedorValoracion').innerHTML='';
+        }
+
+         function zona4(){
+            var nombrezona_4='Thalrassath';
+            var zona_4= document.getElementById('zona-4');
+            if (zona_4.style.display =='none'){
+                zona_4.style.display='block';
+            } else {
+                zona_4.style.display='none';
+            }
+            var indicezona_4= document.getElementById('indiceZona4');
+            if (indicezona_4.style.display =='none'){
+                indicezona_4.style.display='block';
+            } else {
+                indicezona_4.style.display='none';
+            }
+            document.getElementById('cajaZona').value=nombrezona_4;
+            document.getElementById('contenedorValoracion').innerHTML='';
+        }
+        
+         function zona5(){
+            var nombrezona_5='Leviatán de Bruma';
+            var zona_5= document.getElementById('zona-5');
+            if (zona_5.style.display =='none'){
+                zona_5.style.display='block';
+            } else {
+                zona_5.style.display='none';
+            }
+            var indicezona_5= document.getElementById('indiceZona5');
+            if (indicezona_5.style.display =='none'){
+                indicezona_5.style.display='block';
+            } else {
+                indicezona_5.style.display='none';
+            }
+            document.getElementById('cajaZona').value=nombrezona_5;
+            document.getElementById('contenedorValoracion').innerHTML='';
+        }
+
+        function valorar() {
+            var contenidoZona= document.getElementById('cajaZona').value;
+            var contenidoValoracion= document.getElementById('cajaValoracion').value;
+            document.getElementById('contenedorValoracion').innerHTML="<strong>" + contenidoZona +' '+ "</strong>" + "<em>" + contenidoValoracion + "</em>";
+        }
+
+    </script>
+</head>
+<body>
+    <div id='titulo' class="containerTitulo"><h1>Mapa interactivo de Thalrondor</h1></div><br>
+
+    <div id='indiceZona1' class="containerIndice" style="display: none;">
+        <a href="#descripcion-1">Descripción</a>
+        <a href="#datos1">Lista de minerales</a>
+        <a href="#imagen1">Imagen del lugar</a>
+    </div>
+    <div id='indiceZona2' class="containerIndice" style="display: none;">
+        <a href="#descripcion-2">Descripción</a>
+        <a href="#datos2">Tipos de maderas élifcas</a>
+        <a href="#imagen2">Imagen del lugar</a>
+    </div>
+    <div id='indiceZona3' class="containerIndice" style="display: none;">
+        <a href="#descripcion-3">Descripción</a>
+        <a href="#datos3">Lista de artículos de Eldoria</a>
+        <a href="#imagen3">Imagen del lugar</a>
+    </div>
+    <div id='indiceZona4' class="containerIndice" style="display: none;">
+        <a href="#descripcion-4">Descripción</a>
+        <a href="#datos4">Lista de dragones</a>
+        <a href="#imagen4">Imagen del lugar</a>
+    </div>
+    <div id='indiceZona5' class="containerIndice" style="display: none;">
+        <a href="#descripcion-5">Descripción</a>
+        <a href="#datos5">Viajes del Leviatán de Bruma</a>
+        <a href="#imagen5">Imagen del lugar</a>
+    </div>
+
+    <div class="mapatotal">
+    <img id='mapa' src="imagenes/mapa.png" usemap="#mapa">
+    <map name="mapa">
+    <area onmouseover="cambioMapa1()" onmouseout="vuelveMapa1()" onclick="zona1();" target="_parent" alt="rocas" title="rocas" href="#" coords="658,341,682,301,725,340,745,325,753,340,739,370,746,392,754,396,725,413,678,387" shape="poly">
+    <area onmouseover="cambioMapa2()" onmouseout="vuelveMapa2()" onclick="zona2();" target="_parent" alt="bosque" title="bosque" href="#" coords="412,607,449,581,469,575,497,601,529,595,572,608,597,626,626,599,636,580,652,607,667,579,696,566,711,575,712,593,653,631,620,657,586,665,537,666,518,683,498,689,460,674,441,671,418,662,404,641" shape="poly">
+    <area onmouseover="cambioMapa3()" onmouseout="vuelveMapa3()" onclick="zona3();" target="_parent" alt="aldea" title="aldea" href="#" coords="288,545,25" shape="circle">
+    <area onmouseover="cambioMapa4()" onmouseout="vuelveMapa4()" onclick="zona4();" target="_parent" alt="dragon" title="dragon" href="#" coords="868,139,879,141,893,125,899,120,903,113,906,80,919,67,943,74,950,87,953,108,951,122,967,110,982,81,994,92,1024,86,1024,127,999,136,1024,165,1022,184,1002,193,987,200,989,207,974,209,905,187,898,190,861,145,882,134" shape="poly">
+    <area onmouseover="cambioMapa5()" onmouseout="vuelveMapa5()" onclick="zona5();" target="_parent" alt="barco" title="barco" href="#" coords="184,840,283,926" shape="rect">  
+    </map>
+    </div>
+<br>
+<div id="formulario" class="containerFormulario">
+    <h3>FORMULARIO</h3>
+    <input type="text" id="cajaZona" value="Zona"><br>
+    <input type="text" id="cajaValoracion" value="Escribe una valoración"><br><br>
+    <input type="button" value="Valorar" onclick="valorar();"><br>
+    <div id="contenedorValoracion"></div>
+</div>
+
+<div id="zona-1" style="display: none;" class="containerZona">
+
+        <br><h2>Ered Mithril</h2><br>
+        <section id="descripcion-1">
+            <h3>Descripción</h3>
+            <p>Las Ered Mithril se alzan con una grandiosidad que desafía tanto el tiempo como la imaginación. Sus picos resplandecen como plata bajo la luz de la luna, evocando la brillantez del mithril, el mítico metal que una vez definió la riqueza y el poder de la Tierra Media.
+
+            En sus laderas, antiguas sendas serpentean entre profundos valles y abruptos acantilados, escoltadas por bosques de árboles centenarios cuyas raíces se hunden en las leyendas de épocas olvidadas. Estas montañas no solo son un testimonio de la naturaleza indomable, sino también un refugio para criaturas de ensueño: águilas majestuosas que surcan los cielos, y bestias míticas que vigilan en la sombra.
+            </p>
+        </section><br>
+        <section id="datos1">
+        <h3>Lista de minerales</h3>
+        <ol>
+            <li>Mithril Puro: un metal extremadamente ligero y resistente, de color plateado brillante, conocido por su capacidad para canalizar magia.</li>
+            <li>Luznita: un cristal transparente que emite un leve resplandor en la oscuridad. Utilizado por los magos para iluminar las profundidades.</li>
+            <li>Volcrita: un mineral volcánico oscuro, caliente al tacto, que contiene energía elemental de fuego en su interior.</li>
+            <li>Auranio: mineral dorado que flota ligeramente sobre el suelo, utilizado para la creación de objetos encantados de levitación.</li>
+            <li>Sombrarita: un mineral negro y mate que absorbe la luz. Se dice que tiene propiedades para ocultar al portador en las sombras.</li>
+            <li>Aquaril: un cristal de color azul profundo que se encuentra cerca de los manantiales mágicos. Conecta a su portador con la magia del agua.</li>
+        </ol>
+        </section><br><br><br><br>
+        <section id="imagen1">
+        <img src="imagenes/montana.png" width="600px" height="600px">
+        </section>  
+</div>
+
+<div id="zona-2" style="display: none;" class="containerZona">
+    
+        <br><h2>Elrondil</h2><br>    
+        <section id="descripcion-2">
+            <h3>Descripción</h3>
+            <p>Elrondil, el Bosque de la Eterna Bruma, es un lugar donde la magia y la naturaleza se entrelazan en perfecta armonía. Los árboles gigantescos, con sus troncos tan anchos como casas, se elevan hacia el cielo, sus copas formando un dosel que filtra la luz del sol en haces dorados y plateados. Las hojas, que cambian de color con cada estación, brillan con un resplandor etéreo, como si cada una estuviera impregnada de magia antigua.
+
+            Se dice que en el corazón de Elrondil se encuentra el Árbol del Alba, un árbol tan antiguo que sus raíces se hunden en las primeras eras del mundo. Sus flores, que solo florecen una vez cada mil años, tienen el poder de sanar cualquier herida y purificar el alma de quienes las contemplan.
+            </p>
+        </section><br>
+        <section id="datos2">
+            <h3>Tabla de maderas élficas</h3>
+            <table border="1" cellspacing="0" cellpadding="5">
+                <tr>
+                    <th>Nombre de la madera élfica</th>
+                    <th>Color</th>
+                    <th>Resistencia</th>
+                    <th>Características especiales</th>
+                    <th>Uso típico</th>
+                </tr>
+                <tr>
+                    <td>Silvénor</td>
+                    <td>Plateado Claro</td>
+                    <td>Alta</td>
+                    <td>Ligera, pero extremadamente resistente. Resonante con magia natural.</td>
+                    <td>Arcos, varitas, instrumentos mágicos.</td>
+                </tr>
+                <tr>
+                    <td>Lámelith</td>
+                    <td>Verde Esmeralda</td>
+                    <td>Moderada</td>
+                    <td>Flexibilidad excepcional, ideal para objetos que requieren elasticidad.</td>
+                    <td>Construcción de casas élficas, muebles.</td>
+                </tr>
+                <tr>
+                    <td>Dor’thalas</td>
+                    <td>Dorado Brillante</td>
+                    <td>Muy Alta</td>
+                    <td>Inmune al fuego y resistente a la corrosión.</td>
+                    <td>Armaduras y escudos de élite.</td>
+                </tr>
+                <tr>
+                    <td>Thal'andrien</td>
+                    <td>Azul Pálido</td>
+                    <td>Baja</td>
+                    <td>Regenera sus fibras con el tiempo, autorreparable.</td>
+                    <td>Pequeños utensilios y artesanías.</td>
+                </tr>
+                <tr>
+                    <td>Ithildinor</td>
+                    <td>Negro con Vetillas Plateadas</td>
+                    <td>Alta</td>
+                    <td>Absorbe luz, haciéndolo ideal para camuflaje nocturno.</td>
+                    <td>Arcos y dagas para exploradores.</td>
+                </tr>
+            </table>
+        </section><br><br><br><br>
+        <section id="imagen2">
+        <img src="imagenes/bosque.png" width="600px" height="600px">
+        </section> 
+</div>
+
+<div id="zona-3" style="display: none;" class="containerZona">
+    
+        <br><h2>Eldoria</h2><br>
+        <section id="descripcion-3">
+            <h3>Descripción</h3>
+            <p>En el corazón de este mundo mágico, en un claro protegido por la sombra de las Ered Mithril y no muy lejos del misterioso bosque de Elrondil, se encuentra la aldea de Eldoria. Esta aldea humana, aunque pequeña, resplandece con la vida y la labor de sus habitantes. Las casas, construidas con piedra y madera, tienen techos de paja y ventanas de cristal coloreado que reflejan la luz del sol en un caleidoscopio de colores.
+
+            Eldoria es famosa por sus campos de flores y cultivos exuberantes, mantenidos con dedicación y sabiduría pasada de generación en generación. Un río cristalino, naciente de las montañas, atraviesa la aldea, proporcionando agua pura y fresca. Los niños juegan junto a sus orillas, mientras los pescadores lanzan sus redes al amanecer.
+            
+            En el centro de la aldea se erige la Torre de Vellor, una antigua estructura que sirve tanto como punto de encuentro comunal como lugar de sabiduría. Allí, los ancianos cuentan historias de héroes y epopeyas, y los jóvenes aprenden las artes de la agricultura, la herrería y la magia elemental.
+            </p>
+        </section><br>
+        <section id="datos3">
+            <h3>Lista de artículos</h3>
+            <ul>
+                <li>Cristal de Comunicación Arcana:	Un cristal encantado que permite a los ciudadanos comunicarse a largas distancias usando magia.</li>
+                <li>Varillas de Iluminación: Varillas flotantes encantadas que iluminan las calles y plazas de Eldoria con una luz suave y mágica.</li>
+                <li>Capa de Invisibilidad Temporal: Una capa tejida con hilos mágicos que otorga invisibilidad durante unos minutos. Usada para viajes discretos.</li>
+                <li>Anillo de Protección Mística: Un anillo común entre los ciudadanos que crea una barrera mágica ligera, útil contra pequeños peligros.</li>
+                <li>El Ojo de Verus: Un artefacto antiguo que permite al portador ver la verdadera naturaleza de cualquier persona o objeto.</li>
+                <li>Grimorio de los Eternos: Un libro de hechizos tan antiguo que contiene conocimiento sobre la magia prohibida y olvidada de los primeros magos.</li>
+            </ul>
+        </section><br><br><br><br>
+        <section id="imagen3">
+        <img src="imagenes/aldea.png" width="600px" height="600px">
+        </section> 
+</div>
+
+<div id="zona-4" style="display: none;" class="containerZona">
+    
+        <br><h2>Thalrassath</h2><br>
+        <section id="descripcion-4">
+            <h3>Descripción</h3>
+            <p>Este dragón, con escamas negras como la noche y ojos de fuego llameante, ha sido una leyenda temida desde tiempos inmemoriales. Su tamaño monumental eclipsa a las montañas y su vuelo enciende el cielo en una danza de sombras y fuego.
+
+            Thalrassath habita en lo más profundo de las Ered Mithril, en una cueva adornada con los tesoros de reinos antiguos y las riquezas de aquellos que alguna vez osaron desafiar su poder. Sus rugidos, tan poderosos como las tormentas más feroces, resuenan a través de los valles, sembrando el pánico en el corazón de aquellos que los escuchan.
+        
+            Las historias cuentan que Thalrassath guarda conocimientos arcanos y secretos de la creación del mundo, escritos en antiguas runas dentro de su guarida. Solo aquellos valientes y dignos que sean capaces de enfrentarse a su furia podrían acercarse a estos secretos, aunque ninguno ha regresado para contarlo.
+            </p>
+        </section><br>
+        <section id="datos4">
+            <h3>Lista descriptiva de dragones</h3>
+            <dl>
+                <dt><b>Thalrassath el Eterno (Gran Dragón Primordial)</b></dt>
+                <dd>Thalrassath es el dragón primordial del que descienden todos los dragones de su linaje. Se dice que su tamaño supera el de montañas enteras y que sus escamas tienen un brillo dorado incandescente que puede cegarte si lo miras directamente. Thalrassath controla la magia primordial del tiempo y la eternidad, lo que lo hace inmortal y atemporal.</dd>
+                <dt><b>Serathin, el Guardián del Alba</b></dt>
+                <dd>Serathin es el hijo mayor de Thalrassath y su poder está vinculado a la luz del amanecer. De escamas doradas y ojos llameantes, vuela por los cielos cada día al alba, siendo adorado por las civilizaciones humanas que ven su paso como un símbolo de prosperidad. Su vuelo está acompañado por un resplandor cálido que disipa la oscuridad y las sombras.</dd>
+                <dt><b>Vaelrath, la Sombra Nocturna</b></dt>
+                <dd>Vaelrath es el dragón que gobierna la noche, un contraste oscuro con su hermano Serathin. Sus escamas son negras como el ébano, con brillos púrpura que recuerdan a las estrellas del firmamento. Aunque temido por muchos, Vaelrath es sabio y misterioso, y sólo aparece en los cielos nocturnos cuando la luna es nueva. Se le considera el guardián de los secretos olvidados.</dd>
+                <dt><b>Zyrenith, la Tempestad Alada</b></dt>
+                <dd>Zyrenith, conocida como la reina de las tormentas, es una dragona plateada cuyos rugidos invocan rayos y truenos. Se la describe como volátil y poderosa, con alas tan grandes que pueden cubrir un horizonte entero. Su temperamento es impredecible, pero es respetada por su inmenso poder sobre los elementos.</dd>
+                <dt><b>Lithriss, la Guardiana de los Cristales</b></dt>
+                <dd>Lithriss es una dragona de aspecto majestuoso, con escamas de color esmeralda que parecen talladas en cristal. Se la conoce por su conexión con la tierra y las gemas preciosas, que florecen a su paso. En las leyendas, se dice que puede transformar montañas enteras en cristales brillantes, que reflejan la sabiduría y la magia antigua.</dd>
+                <dt><b>Drakmor, el Incinerador de Mundos</b></dt>
+                <dd>Drakmor es el más feroz de los descendientes de Thalrassath, con escamas carmesí que brillan como el magma. Su aliento de fuego es tan poderoso que puede fundir rocas en segundos, y es conocido por su inigualable furia en combate. Muchos lo consideran un dragón de guerra, ya que su presencia anuncia la destrucción y el caos.</dd>
+            </dl>
+        </section><br><br><br><br>
+        <section id="imagen4">
+        <img src="imagenes/dragon.png" width="600px" height="600px">
+        </section>
+</div>
+
+<div id="zona-5" style="display: none;" class="containerZona">
+    
+        <br><h2>Leviatán de Bruma</h2><br>
+        <section id="descripcion-5">
+            <h3>Descripción</h3>
+            <p>El barco más majestuoso de todos los mares en este mundo mágico. Construido con la madera de los árboles más antiguos de Elrondil y reforzado con mithril de las Ered Mithril, El Leviatán de Bruma es una maravilla tanto de ingeniería como de hechicería.
+
+            Sus velas están tejidas con hilos encantados que capturan el viento de forma mágica, permitiendo al barco surcar los mares a una velocidad impresionante. La cubierta del barco brilla bajo la luz de las estrellas, reflejando constelaciones y luces del norte, haciendo que parezca que El Leviatán de Bruma navega sobre un mar de estrellas.
+            
+            En su interior, los camarotes son lujosos, decorados con tapices élficos y artefactos antiguos. El capitán y la tripulación son legendarios, conocidos por sus hazañas y sus profundos conocimientos de los mares y las estrellas.
+            </p>
+        </section><br>
+        <section id="datos5">
+            <h3>Viajes del Leviatán de Bruma</h3>
+            <p>Uno de los viajes más recordados del Leviatán de Bruma fue cuando cruzó el misterioso Mar Etéreo, una vasta extensión de agua imbuida de magia donde la realidad se distorsiona y el tiempo parece fluir de manera errática. Durante este viaje, el capitán Orion Faelan, famoso explorador y hechicero, condujo a la tripulación a través de tormentas arcanas, donde los barcos comunes habrían sido destrozados por fuerzas invisibles.</p>
+            <p>Este viaje llevó al Leviatán de Bruma a las peligrosas Islas Susurrantes, un archipiélago cubierto por nieblas espesas y perpetuas. Las leyendas afirmaban que los vientos en esas islas susurraban secretos prohibidos a aquellos que se atrevían a escuchar. Se creía que nadie que navegara por esas aguas regresaba con la cordura intacta.</p>
+            <p>En una travesía más allá del Océano Sin Fin, el Leviatán de Bruma se embarcó en un viaje que bordeaba lo imposible: seguir una estrella fugaz que nunca caía. Durante semanas, el barco persiguió la luz, que parecía guiarlo hacia el lejano reino de Sidrial, una tierra envuelta en leyenda, donde las estrellas descienden para tocar el mar y conceder deseos a aquellos dignos.</p>
+            <p>Una de las hazañas más impresionantes del Leviatán de Bruma fue su cruce por el Vórtice de Aetheron, una temible región marítima donde el mar se mezcla con la energía bruta del éter, un lugar donde la realidad se distorsiona y los barcos son absorbidos por dimensiones paralelas. El Leviatán fue enviado en una misión diplomática a un reino distante más allá del Vórtice, pero para llegar allí, debía cruzar ese espacio caótico donde el tiempo, el espacio y la materia se deforman.</p>
+            <p>El Leviatán de Bruma no sólo es conocido por sus exploraciones, sino también por su valentía en tiempos de guerra. Durante la Gran Guerra de las Profundidades, cuando criaturas marinas abisales emergieron para atacar las costas de Eldoria, el Leviatán fue la nave insignia en la defensa del reino. Con sus cañones arcanos, capaces de disparar proyectiles de energía pura, y su casco casi indestructible, el Leviatán encabezó la batalla en el Mar Brumoso, donde las criaturas se escondían en la niebla.</p>        
+        </section><br><br><br><br>
+        <section id="imagen5">
+        <img src="imagenes/barco.png" width="600px" height="600px">
+        </section> 
+</div>
+
+
+</body>
+</html>
